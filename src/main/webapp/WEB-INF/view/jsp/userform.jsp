@@ -20,7 +20,7 @@
     <title>Title</title>
 </head>
 <body>
-<form  action='<c:url value="/user/saveuser"/>' method="POST">
+<form  action='<c:url value="saveuser"/>' method="POST">
 <div class="panel panel-default">
     <div class="panel-heading">
         <h3 class="panel-title">Käyttäjän tiedot</h3>
@@ -35,7 +35,7 @@
         <tr><th>Aktivointipäivä: </th><td><input type="text" name="activationDate" value="" ></td></tr>
             </table>
     </div>
-    <button type="button" type="submit"  class="btn btn-small btn-primary">Tallenna</button>
+    <button  type="submit"  class="btn btn-small btn-primary">Tallenna</button>
 </div>
 </form>
 </body>

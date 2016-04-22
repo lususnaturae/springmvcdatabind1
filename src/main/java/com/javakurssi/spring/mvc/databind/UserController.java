@@ -24,7 +24,7 @@ public class UserController {
         model.addAttribute("lastName", lastName);
         model.addAttribute("email", email);
 
-        return "/home";
+        return "/showuserform";
     }
 
 }
