@@ -27,12 +27,12 @@
     </div>
     <div class="panel-body">
         <table>
-        <tr><th>Etunimi: </th><td><input type="text" name="firstName" value="" ></td></tr>
-        <tr><th>Sukunimi: </th><td><input type="text" name="lastName" value="" ></td></tr>
-        <tr><th>Sähköposti: </th><td><input type="text" name="email" value="" ></td></tr>
-        <tr><th>Ikä: </th><td><input type="text" name="age" value="" ></td></tr>
-        <tr><th>Kunta: </th><td><input type="text" name="municipal" value="" ></td></tr>
-        <tr><th>Aktivointipäivä: </th><td><input type="text" name="activationDate" value="" ></td></tr>
+        <tr><th>Etunimi: </th><td>${firstName}</td></tr>
+        <tr><th>Sukunimi: </th><td>${lastName}</td></tr>
+        <tr><th>Sähköposti: </th><td>${email}</td></tr>
+        <tr><th>Ikä: </th><td>${age}</td></tr>
+        <tr><th>Kunta: </th><td>${municipal}</td></tr>
+        <tr><th>Aktivointipäivä: </th><td>${activationDate}</td></tr>
             </table>
     </div>
 </div>
