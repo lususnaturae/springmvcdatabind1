@@ -11,6 +11,7 @@
 
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="th" uri="http://www.springframework.org/tags/form" %>
 <%@ page isELIgnored="false" %>
 <html>
 <head>
@@ -20,23 +21,31 @@
     <title>Title</title>
 </head>
 <body>
-<form  action='<c:url value="saveuser"/>' method="POST">
+<form:form  action='/user/showuser' modelAttribute="userForm" commandName="userForm" method="POST">
 <div class="panel panel-default">
     <div class="panel-heading">
         <h3 class="panel-title">Käyttäjän tiedot</h3>
     </div>
     <div class="panel-body">
         <table>
-        <tr><th>Etunimi: </th><td><input type="text" name="firstName" value="" ></td></tr>
-        <tr><th>Sukunimi: </th><td><input type="text" name="lastName" value="" ></td></tr>
-        <tr><th>Sähköposti: </th><td><input type="text" name="email" value="" ></td></tr>
-        <tr><th>Ikä: </th><td><input type="text" name="age" value="" ></td></tr>
-        <tr><th>Kunta: </th><td><input type="text" name="municipal" value="" ></td></tr>
-        <tr><th>Aktivointipäivä: </th><td><input type="text" name="activationDate" value="" ></td></tr>
+
+        <tr><th>Etunimi: </th><td><form:input path="firstName" type="text" value="${firstName}"/></td>
+            <td><form:errors path="firstName" /></td></tr>
+        <tr><th>Sukunimi: </th><td><form:input path="lastName" type="text" value="${lastName}" /></td>
+            <td><form:errors path="lastName" /></td></tr>
+        <tr><th>Sähköposti: </th><td><form:input path="email" type="text"  value="${email}"/></td>
+            <td><form:errors path="email" /></td></tr>
+        <tr><th>Ikä: </th><td><form:input path="age" type="text"  value="${age}"/></td>
+            <td><form:errors path="age" />TTT</td></tr>
+        <tr><th>Kunta: </th><td><form:input path="municipal" type="text"   value="${municipal}" /></td>
+            <td><form:errors path="municipal" /></td></tr>
+        <tr><th>Aktivointipäivä: </th><td><form:input path="activationDate" type="text"  value="${activationDate}" /></td>
+            <td><form:errors path="activationDate" /></td></tr>
             </table>
     </div>
     <button  type="submit"  class="btn btn-small btn-primary">Tallenna</button>
 </div>
-</form>
+    ${testi}
+</form:form>
 </body>
 </html>

@@ -1,4 +1,4 @@
-package com.javakurssi.spring.mvc.databind;
+package com.javakurssi.spring.mvc.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
