@@ -31,7 +31,7 @@
         <tr><th>Sukunimi: </th><td>${userForm.lastName}</td></tr>
         <tr><th>Sähköposti: </th><td>${userForm.email}</td></tr>
         <tr><th>Ikä: </th><td>${userForm.age}</td></tr>
-        <tr><th>Kunta: </th><td>${userForm.municipal}</td></tr>
+        <tr><th>Kunta: </th><td>${userForm.municipals}</td></tr>
         <tr><th>Aktivointipäivä: </th><td>${userForm.activationDate}</td></tr>
             </table>
     </div>

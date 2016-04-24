@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by marco on 21.4.2016.
@@ -28,7 +30,21 @@ public class UserController {
     @RequestMapping(value = "/newuser", method = RequestMethod.GET)
     public String sensorForm(Model model) {
         User user = new User();
+
+        List<String> preCheckedVals = new ArrayList<>();
+        preCheckedVals.add("Nokia");
+        user.setMunicipals(preCheckedVals);
+
         model.addAttribute("userForm", user);
+        List<String> municipals = new ArrayList<>();
+        municipals.add("Tampere");
+        municipals.add("Kangasala");
+        municipals.add("Ylöjärvi");
+        municipals.add("Nokia");
+        municipals.add("Vesilahti");
+        municipals.add("Lempäälä");
+        municipals.add("Pirkkala");
+        model.addAttribute("municipals", municipals);
         return "/userform";
     }
 
@@ -37,9 +53,19 @@ public class UserController {
 
         validator.validate(user, result);
         model.addAttribute("userForm", user);
-        model.addAttribute("testi", "TOINEN LATAUS");
+
+
         if (result.hasErrors())
         {
+            List<String> municipals = new ArrayList<>();
+            municipals.add("Tampere");
+            municipals.add("Kangasala");
+            municipals.add("Ylöjärvi");
+            municipals.add("Nokia");
+            municipals.add("Vesilahti");
+            municipals.add("Lempäälä");
+            municipals.add("Pirkkala");
+            model.addAttribute("municipals", municipals);
             return "/userform";
         }
         return "/showuserform";

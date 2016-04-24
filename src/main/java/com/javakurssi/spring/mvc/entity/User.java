@@ -3,6 +3,7 @@ package com.javakurssi.spring.mvc.entity;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by marco on 22.4.2016.
@@ -22,7 +23,7 @@ public class User {
     private int Age;
 
     // check that municipal is Tampere or Kangasala
-    private String municipal;
+    private List<String> municipals;
 
     //check that date is not past date
     @DateTimeFormat(pattern = "dd.MM.yyyy")
@@ -60,12 +61,12 @@ public class User {
         Age = age;
     }
 
-    public String getMunicipal() {
-        return municipal;
+    public List<String> getMunicipals() {
+        return municipals;
     }
 
-    public void setMunicipal(String municipal) {
-        this.municipal = municipal;
+    public void setMunicipals(List<String> municipals) {
+        this.municipals = municipals;
     }
 
     public Date getActivationDate() {

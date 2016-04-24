@@ -13,10 +13,6 @@ import java.util.regex.Pattern;
  */
 public class UserValidator implements Validator{
 
-    private Pattern pattern;
-    private Matcher matcher;
-
-    private static final String EMAIL_PATTERN = "[@]*[.]";
 
     /**
      *  This validator validates only User instances
@@ -33,13 +29,13 @@ public class UserValidator implements Validator{
         ValidationUtils.rejectIfEmptyOrWhitespace(e, "lastName", "lastName.empty");
         ValidationUtils.rejectIfEmptyOrWhitespace(e, "email", "email.empty");
         ValidationUtils.rejectIfEmptyOrWhitespace(e, "age", "age.empty");
-        ValidationUtils.rejectIfEmptyOrWhitespace(e, "municipal", "municipal.empty");
+        ValidationUtils.rejectIfEmptyOrWhitespace(e, "municipals", "municipals.empty");
         ValidationUtils.rejectIfEmptyOrWhitespace(e, "activationDate", "activationDate.empty");
 
-        pattern = Pattern.compile(EMAIL_PATTERN);
+
         User u = (User) obj;
-        matcher = pattern.matcher(u.getEmail());
-        if (!matcher.matches()) {
+
+        if (!u.getEmail().contains("@")) {
             e.rejectValue("email", "email.not.correct.format");
         }
         if (u.getAge() < 18) {
